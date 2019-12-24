@@ -1,0 +1,4 @@
+# pack-refs with: peeled fully-peeled sorted 
+d6143fa19bbc16b9e0206daaa48423cd46feb0d1 refs/remotes/origin/feature/pymotutils_adapter
+280b8bdb255f223813ff4a8679f3e1321b08cdfc refs/remotes/origin/master
+71ffbdd1f9f9643a23a4b21cd02916c53e78f713 refs/remotes/origin/updated-citation
