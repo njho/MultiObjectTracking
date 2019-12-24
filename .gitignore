@@ -20,7 +20,3 @@ __pycache__
 trackrcnn_init
 sort/data
 
-tensorpack
-trackrcnn_init
-
-tracking_wo_bnw
