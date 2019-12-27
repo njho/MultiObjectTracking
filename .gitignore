@@ -22,3 +22,5 @@ sort/data
 
 data_tracking_image_2
 TrackR-CNN/kitti_mots
+*.jpg
+*.mp4
