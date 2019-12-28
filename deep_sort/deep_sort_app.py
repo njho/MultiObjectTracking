@@ -12,6 +12,7 @@ from application_util import visualization
 from deep_sort import nn_matching
 from deep_sort.detection import Detection
 from deep_sort.tracker import Tracker
+import time
 
 
 def gather_sequence_info(sequence_dir, detection_file):
@@ -177,6 +178,7 @@ def run(
 
     def frame_callback(vis, frame_idx):
         print("Processing frame %05d" % frame_idx)
+        time.sleep(0.05)
         try:
             image = cv2.imread(seq_info["image_filenames"][frame_idx], cv2.IMREAD_COLOR)
         except KeyError:
@@ -201,7 +203,7 @@ def run(
         # Update visualization.
         if display:
             # print(seq_info["image_filenames"])
-            print(frame_idx)
+            # print(frame_idx)
             image = cv2.imread(seq_info["image_filenames"][frame_idx], cv2.IMREAD_COLOR)
             vis.set_image(image.copy())
             vis.draw_detections(detections)
