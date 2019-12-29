@@ -18,7 +18,7 @@ run `pip3 install -r requirements.txt`
 download model using 
 ```
 cd models/conv3d_sep2
-gdown 
+gdown https://drive.google.com/uc?id=1q68kKqAEUaOJgcgQE0gC-PwYyY0WQ1fj
 cd ../..
 ```
 

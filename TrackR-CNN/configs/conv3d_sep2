@@ -28,7 +28,8 @@
 
   # Dataset options
   "KITTI_segtrack_data_dir": "/globalwork/krause/data/KITTI_MOTS/train/",
-  "MOTS_segtrack_data_dir": "/Users/nicholasho/Documents/GoVertical/Research/TrackR-CNN/MOT16/train",
+  # "MOTS_segtrack_data_dir": "/Users/nicholasho/Documents/GoVertical/Research/TrackR-CNN/MOT16/train",
+  "MOTS_segtrack_data_dir": "/home/brody_datahinge_org/MultiObjectTracking/TrackR-CNN/MOT16/train",
   "optical_flow_path": "/globalwork/krause/data/KITTI_flow_pwc/",
   "prefer_gt_to_ignore": true,
   "use_ioa_for_ignore": true,
