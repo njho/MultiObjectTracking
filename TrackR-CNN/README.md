@@ -12,6 +12,16 @@ https://github.com/VisualComputingInstitute/mots_tools
 
 ## Running this code
 ### Setup
+
+### GoVertical
+run `pip3 install -r requirements.txt` 
+download model using 
+```
+cd models/conv3d_sep2
+gdown 
+cd ../..
+```
+
 You'll need to install the following packages (possibly more):
 ```
 tensorflow-gpu pycocotools numpy scipy sklearn pypng opencv-python munkres
