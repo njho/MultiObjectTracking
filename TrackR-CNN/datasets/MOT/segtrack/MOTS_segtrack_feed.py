@@ -11,9 +11,26 @@ SEQ_IDS_VAL = ["%04d" % idx for idx in [2, 5, 9, 11]]
 
 @register_dataset(NAME)
 class MOTSSegtrackFeedDataset(KittiSegtrackLikeFeedDataset):
-  def __init__(self, config, subset):
-    super().__init__(config, subset, "MOTS_segtrack", DEFAULT_PATH, SEQ_IDS_TRAIN, SEQ_IDS_VAL, False)
-    self.time_starts_at_1 = True
+    def __init__(self, config, subset):
+        super().__init__(
+            config,
+            subset,
+            "MOTS_segtrack",
+            DEFAULT_PATH,
+            SEQ_IDS_TRAIN,
+            SEQ_IDS_VAL,
+            False,
+        )
+        self.time_starts_at_1 = True
 
-  def get_filenames_for_video_idx(self, idx):
-    return sorted(glob.glob(self.data_dir + "/images/" + self._video_tags[idx] + "/*.jpg"))
+    def get_filenames_for_video_idx(self, idx):
+        print("GET FILES FOR VIDEO")
+        print(self.data_dir + "/images/" + self._video_tags[idx] + "/*.jpg")
+        print(
+            sorted(
+                glob.glob(self.data_dir + "/images/" + self._video_tags[idx] + "/*.jpg")
+            )
+        )
+        return sorted(
+            glob.glob(self.data_dir + "/images/" + self._video_tags[idx] + "/*.jpg")
+        )
