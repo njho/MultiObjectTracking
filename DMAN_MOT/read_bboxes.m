@@ -2,6 +2,7 @@
 function bboxes = read_bboxes(file_name)
 
 fid = fopen(file_name, 'r');
+
 % <frame>, <id>, <bb_left>, <bb_top>, <bb_width>, <bb_height>, <conf>, <x>, <y>, <z>
 line = textscan(fid, '%d %d %f %f %f %f %f %f %f %f', 'Delimiter', ',');
 fclose(fid);

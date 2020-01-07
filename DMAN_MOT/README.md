@@ -22,6 +22,22 @@ pip install tensorflow-gpu==1.1.0
 pip install keras==2.0.5
 </code></pre>
 
+GoVertical Note:
+This library also requires the following MatLab libraries to be installe: 
+* Image Processing
+* Image Acquisition
+* Deep Learning
+* Computer Vison
+* Signal Processing
+It also has a custom toolbox located here: [Piotr's Computer Vision Matlab Toolbox](https://pdollar.github.io/toolbox/)
+
+When you download the MOT16 dataset, add a folder called and `MOT16` and place `train/` and `test/` inside for it to work
+
+
+You also have to go to this link, download the zip: https://github.com/pdollar/toolbox.git
+then `cp toolbox/classify/private/*` into `DMAN_MOT/ECO/external_libs/pdollar_toolbox/channels/private/*`
+
+
 # Usage
 1. Download the [DMAN model](https://zhiyanapp-build-release.oss-cn-shanghai.aliyuncs.com/zhuji_file/spatial_temporal_attention_model.h5) and put it into the "model/" folder.
 2. Download the [MOT16 dataset](https://motchallenge.net/data/MOT16/), unzip it to the "data/" folder.

@@ -24,6 +24,7 @@ end
 
 % read detections
 det_file = fullfile(opt.mot, opt.mot2d, seq_set, seq_name, 'det', 'det.txt');
+fprintf('det file official location: %s\n', det_file); 
 bboxes_det = read_bboxes(det_file);
 
 if strcmp(seq_set, 'train') == 1

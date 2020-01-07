@@ -21,7 +21,7 @@ if ~exist(opt.results_dir)
 end
 
 % determine whether running on the training set or test set
-is_train = true;
+is_train = false;
 
 % training and testing pairs
 seq_num = numel(opt.mot2d_train_seqs);

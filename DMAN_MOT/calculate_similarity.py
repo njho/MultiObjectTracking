@@ -11,7 +11,7 @@ from spatial_temporal_attention_network import generate_model
 import socket
 
 # determine whether runing on MOT training set or test set
-dataset = 'train' # or 'test'
+dataset = 'test' # or 'test'
  
 # communicate with the matlab program using the socket
 host = '127.0.0.1' 
