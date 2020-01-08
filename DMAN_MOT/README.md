@@ -22,7 +22,7 @@ pip install tensorflow-gpu==1.1.0
 pip install keras==2.0.5
 </code></pre>
 
-GoVertical Note:
+# GoVertical Note:
 This library also requires the following MatLab libraries to be installe: 
 * Image Processing
 * Image Acquisition
@@ -37,6 +37,12 @@ When you download the MOT16 dataset, add a folder called and `MOT16` and place `
 You also have to go to this link, download the zip: https://github.com/pdollar/toolbox.git
 then `cp toolbox/classify/private/*` into `DMAN_MOT/ECO/external_libs/pdollar_toolbox/channels/private/*`
 
+Once the model is finished running, it'll output a txt file in results. This is in the standard MOT16 format. Results can be visualized using the deep sort library. 
+`cd` into the `MultiObjectTracking` folder and run 
+
+`python deep_sort/show_results.py --sequence_dir DMAN_MOT/data/MOT16/test/MOT16-01/ --result_file DMAN_MOT/results/MOT16-01.txt --output_file results.mp4`
+change `--sequence_dir` to where the images are located that you ran
+change `--result_file` to your results text file
 
 # Usage
 1. Download the [DMAN model](https://zhiyanapp-build-release.oss-cn-shanghai.aliyuncs.com/zhuji_file/spatial_temporal_attention_model.h5) and put it into the "model/" folder.
