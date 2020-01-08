@@ -12,6 +12,7 @@ global client_tcp
 client_tcp = tcpip('127.0.0.1', 65431, 'Timeout', 60,'OutputBufferSize',10240,'InputBufferSize',10240);
 fopen(client_tcp);
 
+/
 addpath(genpath('ECO/'));
 addpath(genpath('devkit/'));
 
