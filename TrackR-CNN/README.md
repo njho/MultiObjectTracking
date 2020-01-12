@@ -33,8 +33,6 @@ test cardiB with the 8 images we have in the main dir:
 do forwarding first
 `python main.py configs/conv3d_sep2 "{\"task\":\"forward_tracking\",\"dataset\":\"KITTI_segtrack_feed\",\"load_epoch_no\":5,\"batch_size\":5,\"export_detections\":true,\"do_tracking\":false,\"video_tags_to_load\":[\"000400\",\"000401\",\"000402\",\"000403\",\"self.data_dir + "/images/" + self._video_tags[idx] + "/*.jpg"\",\"000405\",\"000406\",\"00407\"]}"`
 
-`python main.py configs/conv3d_sep2 "{\"task\":\"forward_tracking\",\"dataset\":\"MOTS_segtrack_feed\",\"load_epoch_no\":5,\"batch_size\":1,\"export_detections\":true,\"do_tracking\":false,\"video_tags_to_load\":[\"img1\"]}"`
-
 then run tracking:
 
 `python main.py configs/conv3d_sep2 "{\"build_networks\":false,\"import_detections\":true,\"task\":\"forward_tracking\",\"dataset\":\"KITTI_segtrack_feed\",\"do_tracking\":true,\"visualize_detections\":false,\"visualize_tracks\":false,\"load_epoch_no\":5,\"video_tags_to_load\":[\"000400\",\"000401\",\"000402\",\"000403\",\"000404\",\"000405\",\"000406\",\"00407\"]}"`
@@ -81,6 +79,8 @@ To obtain the model's predictions (we call this "forwarding") run:
 python main.py configs/conv3d_sep2 "{\"task\":\"forward_tracking\",\"dataset\":\"KITTI_segtrack_feed\",\"load_epoch_no\":5,\"batch_size\":5,\"export_detections\":true,\"do_tracking\":false,\"video_tags_to_load\":[\"0002\",\"0006\",\"0007\",\"0008\",\"0010\",\"0013\",\"0014\",\"0016\",\"0018\",\"0000\",\"0001\",\"0003\",\"0004\",\"0005\",\"0009\",\"0011\",\"0012\",\"0015\",\"0017\",\"0019\",\"0020\"]}"
 ```
 
+`python main.py configs/conv3d_sep2 "{\"task\":\"forward_tracking\",\"dataset\":\"MOTS_segtrack_feed\",\"load_epoch_no\":5,\"batch_size\":1,\"export_detections\":true,\"do_tracking\":false,\"video_tags_to_load\":[\"img1\"]}"`
+
 The json string supplied as an additional argument here overwrites the settings in the config file. Use `video_tags_to_load` to obtain predictions for specific sequences (in the example, all KITTI MOTS sequences are chosen). Output is written to the `forwarded/` subdirectory.
 
 The model predictions as obtained by the previous command are not yet linked over time. You can use the following command to run the tracking algorithm described in the paper and to obtain final results in the `forwarded/` subdirectory which can be processed by the mots_tools scripts:
@@ -91,8 +91,7 @@ python main.py configs/conv3d_sep2
 ```
 
 ```
-python main.py configs/conv3d_sep2
-"{\"build_networks\":false,\"import_detections\":true,\"task\":\"forward_tracking\",\"dataset\":\"MOTS_segtrack_feed\",\"do_tracking\":true,\"visualize_detections\":false,\"visualize_tracks\":false,\"load_epoch_no\":5,\"video_tags_to_load\":[\"img1\"]}"
+python main.py configs/conv3d_sep2 "{\"build_networks\":false,\"import_detections\":true,\"task\":\"forward_tracking\",\"dataset\":\"MOTS_segtrack_feed\",\"do_tracking\":true,\"visualize_detections\":true,\"visualize_tracks\":true,\"load_epoch_no\":5,\"video_tags_to_load\":[\"img1\"]}"
 ```
 
 You can also visualize the tracking results here by setting `visualize_tracks` to true.

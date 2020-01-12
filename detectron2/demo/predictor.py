@@ -95,9 +95,9 @@ class VisualizationDemo(object):
                     frame, panoptic_seg.to(self.cpu_device), segments_info
                 )
             elif "instances" in predictions:
-
                 #############################
-                # FOR CREATING MOT DETECTIONS
+                # FOR CREATING MOT DETECTIONS (GoVertical)
+                # 1.
                 #############################
                 def write_to_file(file_path, data):
                     with open(file_path, "a") as f:
@@ -107,22 +107,22 @@ class VisualizationDemo(object):
                     """
                     <frame>, <id>, <bb_left>, <bb_top>, <bb_width>, <bb_height>, <conf>, <x>, <y>, <z>
                     """
-
-                    print("bbox")
                     bbox = bbox.tensor
-
                     bb_left = bbox[0][0]
                     bb_top = bbox[0][1]
                     bb_width = bbox[0][2] - bb_left
                     bb_height = bbox[0][3] - bb_top
                     print(bb_left)
                     mot_string = f"{frame_num}, -1, {bb_left}, {bb_top}, {bb_width}, {bb_height}, {score}, -1, -1, -1"
-                    print(mot_string)
                     return mot_string
 
                 predictions = predictions["instances"].to(self.cpu_device)
                 pred_classes = predictions.pred_classes
                 pred_boxes = predictions.pred_boxes
+
+                print(predictions)
+                print(type(predictions))
+
                 for index, predicted_class in enumerate(pred_classes):
                     if predicted_class == 0:
                         mot_string = create_mot_string(
