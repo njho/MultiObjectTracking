@@ -1,0 +1,4 @@
+env/*
+work_space/model/*
+*.pt
+
