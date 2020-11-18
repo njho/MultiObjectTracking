@@ -117,7 +117,7 @@ nbformat==4.4.0
 networkx==2.2
 nltk==3.4.5
 nose==1.3.7
-notebook==5.7.8
+notebook==6.1.5
 numba==0.46.0+0.gfed07c578.dirty
 numexpr==2.7.0
 numpy==1.16.5
