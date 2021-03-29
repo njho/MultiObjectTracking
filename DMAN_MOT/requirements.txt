@@ -155,7 +155,7 @@ pycrypto==2.6.1
 pycurl==7.43.0.3
 pydocstyle==3.0.0
 pyflakes==2.1.1
-Pygments==2.5.2
+Pygments==2.7.4
 pylint==1.9.2
 Pympler==0.7
 pyodbc==4.0.27
