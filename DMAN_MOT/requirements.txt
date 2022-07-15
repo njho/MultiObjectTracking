@@ -42,7 +42,7 @@ dask==1.1.4
 decorator==4.4.1
 defusedxml==0.6.0
 diff-match-patch==20181111
-distributed==1.28.1
+distributed==2021.10.0
 docutils==0.15.2
 entrypoints==0.3
 enum34==1.1.6
